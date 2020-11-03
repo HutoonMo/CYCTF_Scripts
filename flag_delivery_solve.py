@@ -13,9 +13,9 @@ flag = flag.replace('?M6', '.').replace('D', '-')
 
 
 
-# implimintation of morse
+# implemintation of morse code dycrption
 
-def morse(txt):
+def morse(flag):
     d = {
         'A': '.-',
         'B': '-...',
@@ -63,13 +63,13 @@ def morse(txt):
 
         }
 
-    txt = txt.upper()
+    flag = flag.upper()
     translation = ''
     # Swap key/values in d:
     d_encrypt = dict([(v, k) for k, v in d.items()])
-        # Morse code is separated by empty space chars
-    txt = txt.split(' ')
-    for x in txt:
+    # Morse code is separated by empty space chars
+    flag = flag.split(' ')
+    for x in flag:
     	translation += d_encrypt.get(x)
     return translation.strip()
 
